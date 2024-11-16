@@ -1,4 +1,7 @@
 class Cat:
+    def __init__(self):
+        self.nightVision = True
+        print("New cat was born")
 
     def say(self):
         print("may")
@@ -6,7 +9,11 @@ class Cat:
     def climb(self):
         print("I am climbing")
 
-class Dog:
+class Dog: 
+    def __init__(self):
+        self.strongTeeth = True
+        print("New dog was born")
+        
     def say(self):
         print("gaf")
 
@@ -14,6 +21,10 @@ class Dog:
         print("I am running")
 
 class Bird:
+    def __init__(self):
+        self.wing = 2
+        print("New bird was born")
+        
     def say(self):
         print("ku ku")
 
@@ -21,6 +32,11 @@ class Bird:
         print("I am flying")
 
 class Mutant(Dog, Cat, Bird):
+    def __init__(self):
+        super().__init__()
+        Cat.__init__(self)
+        Bird.__init__(self)
+    
     def kungfu(self):
         print("Kijaa")
 
@@ -35,3 +51,6 @@ vasia.say()
 vasia.kungfu()
 vasia.climb()
 vasia.run()
+print(vasia.nightVision)
+print(vasia.strongTeeth)
+print(vasia.wing)
